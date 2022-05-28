@@ -11,7 +11,7 @@ export const auth = async(req:Request & {user?:UserDto},res:Response,next:NextFu
             token = authMiddlewareReq.headers.authorization.split(" ")[1];
             const decoded = jwt.verify(token,process.env.JWT_SCRET as string) as DecodedPayload;
 
-            const user = await User.findById(decoded._id).select("password");
+            const user = await User.findById(decoded._id).select("-password");
             if(!user) return res.status(400).json({message:'User not authorized'});
 
             req.user = user;
