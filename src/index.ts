@@ -3,6 +3,7 @@ import express from 'express';
 import { db } from './config/db';
 import 'express-async-errors';
 import todoRouter from './router/TodoRouter';
+import userRouter from './router/UserRouter';
 
 config();
 db();
@@ -36,6 +37,7 @@ process.on("unhandledRejection",(ex)=>{
     process.exit(1);
 });
 app.use(express.json())
+app.use("/user",userRouter);
 app.use("/todo",todoRouter);
 
 

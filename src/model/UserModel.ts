@@ -1,7 +1,8 @@
-import mongoose from 'mongoose';
-import { UserDto } from '../dtos/UserRequest';
+import mongoose, { Model } from 'mongoose';
+import jwt from 'jsonwebtoken';
+import { UserDto, UserMethods } from '../dtos/UserRequest';
 
-const userSchema = new mongoose.Schema<UserDto>({
+const userSchema = new mongoose.Schema<UserDto,Model<UserDto,{},UserMethods>>({
     name:{
         type:String,
         required:[true,'Please add a name!'],
@@ -17,4 +18,8 @@ const userSchema = new mongoose.Schema<UserDto>({
     }
 },{timestamps:true});
 
-export const User = mongoose.model("User",userSchema);
+userSchema.methods.generateToken = function(){
+    return jwt.sign({_id:this._id},process.env.JWT_SCRET as string);
+}
+
+export const User = mongoose.model<UserDto,Model<UserDto,{},UserMethods>>("User",userSchema);
