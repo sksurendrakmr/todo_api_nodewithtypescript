@@ -1,5 +1,4 @@
-import { string } from 'joi';
-import mongoose, { Model } from 'mongoose';
+import mongoose,{Schema} from 'mongoose';
 import { Message } from '../config/constant';
 import { TodoRequest } from '../dtos/TodoRequest';
 
@@ -14,6 +13,12 @@ const schema = new mongoose.Schema<TodoRequest>({
     },
     description:{
         type:String,
+        default:""
+    },
+    user:{
+        type:Schema.Types.ObjectId,
+        ref:'User',
+        required:true
     }
 },{timestamps:true});
 

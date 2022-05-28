@@ -15,7 +15,7 @@ export const registerUser = async (req: Request, res: Response) => {
     return res.status(400).json({ message: "Email id is already existing" });
 
   const salt = await bcrypt.genSalt(10);
-  const hashedPassword = bcrypt.hash(typedReqBody.password, salt);
+  const hashedPassword = await bcrypt.hash(typedReqBody.password, salt);
 
   const savedUser = await User.create({
     name: typedReqBody.name,
@@ -45,8 +45,9 @@ export const loginUser = async(req:Request,res:Response) => {
     res.status(200).json({email:user.email,token});
 }
 
-export const getUserDetails = (req:AuthMiddlewareReq,res:Response) => {
-    res.status(200).json(req.user);
+export const getUserDetails = (req:Request,res:Response) => {
+    const typedReq = req as AuthMiddlewareReq;
+    res.status(200).json(typedReq.user);
 }
 
 
