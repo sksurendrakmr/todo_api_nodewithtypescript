@@ -45,7 +45,11 @@ As part of the MLPR requirements, we were tasked with adding an expandable and c
 
 Guided team members through the DIY to PRO conversion and Credit app flow, working closely with them to implement all the MLPR related text changes.
 
-
+Familiarized myself with the cloud-native tech stack used for our domain applications, including Prometheus, Grafana, Istio, Kubernetes, and Elasticsearch, and now know how to use these tools effectively.
+Deep-dived into Kubernetes, learning all its key concepts, and I plan to take the certification exam in the coming month.
+Familiarized myself with a new React framework called Next.js, which leverages all the latest React features.
+I’ve been studying clean code architecture through blogs and tutorials, and applying these principles to improve our codebase.
+Learned React Native and published a utility expense tracker app on the Play Store.
 
 
 
