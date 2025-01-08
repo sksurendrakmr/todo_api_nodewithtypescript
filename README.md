@@ -51,6 +51,8 @@ Familiarized myself with a new React framework called Next.js, which leverages a
 I’ve been studying clean code architecture through blogs and tutorials, and applying these principles to improve our codebase.
 Learned React Native and published a utility expense tracker app on the Play Store.
 
+I focus on solving problems with the end user in mind, ensuring that solutions are effective in the long term. I work closely with team members, sharing knowledge and valuing everyone’s contributions. I am always looking for ways to improve processes and take the initiative to learn new skills that benefit the team. I stay committed to delivering high-quality results and overcoming challenges, always keeping the team’s success as my priority.
+
 
 
 
